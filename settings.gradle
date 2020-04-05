@@ -1,0 +1,4 @@
+rootProject.name='AndroidComponents'
+include ':app'
+include ':accounts-ui-component'
+include ':authentication-api-component'

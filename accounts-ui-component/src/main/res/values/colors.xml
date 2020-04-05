@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="dusty_gray">#9b9b9b</color>
+    <color name="tundora">#4a4a4a</color>
+    <color name="boulder">#747474</color>
+    <color name="black">#000000</color>
+    <color name="sandy">#939393</color>
+    <color name="alto">#DEDEDE</color>
+    <color name="athens_gray">#EBECEF</color>
+    <color name="shuttle_gray">#606A7B</color>
+    <color name="trout">#4A515E</color>
+    <color name="chambray">#3B5997</color>
+    <color name="cinnabar">#EA4335</color>
+    <color name="tuna1">#333942</color>
+    <color name="tuna2">#3A3E44</color>
+    <color name="manatee">#9096A0</color>
+    <color name="flash_mahogany">#CC393E</color>
+    <color name="carnation">#F54E5E</color>
+    <color name="light_slate_grey">#7C8695</color>
+    <color name="seal_brown">#141313</color>
+    <color name="baltic_sea">#373D45</color>
+    <color name="eclipse">#3B3B3B</color>
+    <color name="whisper">#EDEDED</color>
+
+</resources>

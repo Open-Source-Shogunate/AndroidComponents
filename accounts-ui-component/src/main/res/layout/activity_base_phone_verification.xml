@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/constraintLayout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".BasePhoneAuthActivity">
+
+  <ImageView
+    android:id="@+id/imageAppLogo"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.25" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/labelTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="@id/imageAppLogo"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="@id/imageAppLogo"
+    app:layout_constraintTop_toBottomOf="@id/imageAppLogo"
+    tools:text="Enter Verification Code" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/labelSubTitle"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:textSize="14sp"
+    app:layout_constraintEnd_toEndOf="@+id/imageAppLogo"
+    app:layout_constraintStart_toStartOf="@+id/labelTitle"
+    app:layout_constraintTop_toBottomOf="@id/labelTitle"
+    tools:text="We sent a code to 09XX-XXXX-XXXX. Enter the code below to verify the number." />
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/inputLayoutCode"
+    style="@style/FormFieldInputLayout"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    app:layout_constraintEnd_toEndOf="@id/imageAppLogo"
+    app:layout_constraintStart_toStartOf="@id/imageAppLogo"
+    app:layout_constraintTop_toBottomOf="@+id/labelSubTitle">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/inputCode"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="number|phone"
+      android:shadowRadius="8"
+      tools:text="6-Digit Code" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/buttonLogin"
+    style="@style/FormButton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:textAlignment="center"
+    app:layout_constraintEnd_toEndOf="@+id/imageAppLogo"
+    app:layout_constraintStart_toStartOf="@+id/imageAppLogo"
+    app:layout_constraintTop_toBottomOf="@id/inputLayoutCode"
+    tools:text="Sign Up" />
+
+  <ProgressBar
+    android:id="@+id/progressBarLogin"
+    style="?android:attr/progressBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="0dp"
+    android:indeterminate="true"
+    android:indeterminateTint="@color/whisper"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="@+id/buttonLogin"
+    app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+    app:layout_constraintStart_toStartOf="@+id/buttonLogin"
+    app:layout_constraintTop_toTopOf="@+id/buttonLogin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
