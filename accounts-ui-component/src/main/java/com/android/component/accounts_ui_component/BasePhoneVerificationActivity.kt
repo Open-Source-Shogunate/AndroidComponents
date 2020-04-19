@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_base_phone_verification.*
 
 open class BasePhoneVerificationActivity : AppCompatActivity() {
 
-  val backgroundLayout by lazy { constraintLayout }
+  val backgroundLayout by lazy { scrollViewLayout }
   val appLogo by lazy { imageAppLogo }
   val titleLabel by lazy { labelTitle }
   val subTitleLabel by lazy { labelSubTitle }
@@ -15,6 +15,7 @@ open class BasePhoneVerificationActivity : AppCompatActivity() {
   val codeInput by lazy { inputCode }
   val loginButton by lazy { buttonLogin }
   val loginProgressBar by lazy { progressBarLogin }
+  val resendButton by lazy { textViewResendCode }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)

@@ -3,6 +3,7 @@ package com.android.component.authentication_api_component
 import android.app.Activity
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**
@@ -11,6 +12,9 @@ import java.util.concurrent.TimeUnit
  * Copyright by Note-e-fied Philippines Incorporated, 2020.
  */
 class FireBaseAuthentication(private val firebaseAuth: FirebaseAuth) {
+
+  private var resendingToken: PhoneAuthProvider.ForceResendingToken? = null
+  private var phoneAuthOptionBuilder: PhoneAuthOptions.Builder? = null
 
   fun verifyPhone(
     phoneNumber: String,
@@ -31,8 +35,8 @@ class FireBaseAuthentication(private val firebaseAuth: FirebaseAuth) {
           onCodeVerification
         )
       )
-      .build()
-    PhoneAuthProvider.verifyPhoneNumber(phoneAuthOptions)
+    phoneAuthOptionBuilder = phoneAuthOptions
+    PhoneAuthProvider.verifyPhoneNumber(phoneAuthOptions.build())
   }
 
   fun verifyCode(
@@ -43,6 +47,15 @@ class FireBaseAuthentication(private val firebaseAuth: FirebaseAuth) {
   ) {
     val credential = PhoneAuthProvider.getCredential(verificationId, code)
     signInWithCredential(credential, onVerificationComplete, onVerificationFailed)
+  }
+
+  fun reVerifyPhone() {
+    val token = resendingToken
+    if (token != null) {
+      phoneAuthOptionBuilder?.setForceResendingToken(token)?.build()?.also {
+        PhoneAuthProvider.verifyPhoneNumber(it)
+      }
+    }
   }
 
   private fun getPhoneVerificationCallback(
@@ -61,7 +74,12 @@ class FireBaseAuthentication(private val firebaseAuth: FirebaseAuth) {
 
       override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
         super.onCodeSent(p0, p1)
+        resendingToken = p1
         onCodeVerification(p0)
+      }
+
+      override fun onCodeAutoRetrievalTimeOut(p0: String) {
+        super.onCodeAutoRetrievalTimeOut(p0)
       }
     }
   }
