@@ -28,9 +28,6 @@
     <Constraint android:id="@id/inputLayoutNumber">
       <PropertySet android:visibility="gone" />
     </Constraint>
-    <Constraint android:id="@id/inputLayoutNumber">
-      <PropertySet android:visibility="gone" />
-    </Constraint>
     <Constraint android:id="@id/buttonLogin">
       <PropertySet android:visibility="gone" />
     </Constraint>
@@ -53,9 +50,6 @@
         app:layout_constraintVertical_bias=".25" />
     </Constraint>
     <Constraint android:id="@id/labelNumber">
-      <PropertySet android:visibility="visible" />
-    </Constraint>
-    <Constraint android:id="@id/inputLayoutNumber">
       <PropertySet android:visibility="visible" />
     </Constraint>
     <Constraint android:id="@id/inputLayoutNumber">
