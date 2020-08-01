@@ -1,3 +1,4 @@
+include ':rickmorty-api-component'
 rootProject.name='AndroidComponents'
 include ':app'
 include ':accounts-ui-component'
